@@ -24,3 +24,4 @@ describe "Test de las cosas del ejercicio camion de transporte" {
     assert.equals(300, bateriaAntiaerea.peso())
   }
 }
+

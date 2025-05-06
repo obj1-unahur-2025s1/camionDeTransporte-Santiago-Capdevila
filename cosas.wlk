@@ -147,3 +147,4 @@ object embalaje {
         return cosaEmbuelta.peligrosidad() / 2
     }
 }
+
