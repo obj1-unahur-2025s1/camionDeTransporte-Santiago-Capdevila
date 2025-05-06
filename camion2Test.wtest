@@ -22,3 +22,5 @@ describe "test del camion" {
     assert.that(camion.algoQuePesa(800))
   }
 }
+
+
