@@ -47,7 +47,7 @@ object bumblebee {
         return 2
     }
 
-    method concecuenciaDeLaCarga() {
+    method consecuenciaDeLaCarga() {
         self.transformarceEnRobot()
     }
 }
@@ -77,8 +77,8 @@ object ladrillos {
         }
     }
 
-     method concecuenciaDeLaCarga() {
-        self.cantidad(12)
+     method consecuenciaDeLaCarga() {
+        cantidad = cantidad + 12
     }
 
     // method bultosSinIF() {
@@ -105,7 +105,7 @@ object arena {
         return 1
     }
 
-     method concecuenciaDeLaCarga() {
+     method consecuenciaDeLaCarga() {
         peso = 0.max(peso - 10)
     }
 }
@@ -146,7 +146,7 @@ object bateriaAntiaerea {
 
     }
 
-     method concecuenciaDeLaCarga() {
+     method consecuenciaDeLaCarga() {
         self.cargarMisiles()
     }
 }
@@ -186,7 +186,7 @@ object contenedorPortuario {
         return 1 + cosas.sum({cosa => cosa.bultos()})
     }
 
-     method concecuenciaDeLaCarga() {
+     method consecuenciaDeLaCarga() {
         cosas.forEach({cosa => cosa.consecuenciaDeLaCarga()})
     }
 }
@@ -202,7 +202,7 @@ object residuosRadioactivos {
       return 1
     }
 
-     method concecuenciaDeLaCarga() {
+     method consecuenciaDeLaCarga() {
         peso = peso + 15
     }
 }
@@ -222,7 +222,7 @@ object embalaje {
         return 2
     }
 
-     method concecuenciaDeLaCarga() {
+     method consecuenciaDeLaCarga() {
         // No hace nada
     }
 }
