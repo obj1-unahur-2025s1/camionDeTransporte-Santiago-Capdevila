@@ -2,7 +2,7 @@ import cosas.*
 
 describe "Test de las cosas del ejercicio camion de transporte" {
 
-  method initiliaze() {
+  method initialize() {
     residuosRadioactivos.peso(30)
     embalaje.cosaEmbuelta(residuosRadioactivos)
     contenedorPortuario.agregarVariasCosas([bumblebee, knightRider, arena])
