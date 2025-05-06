@@ -6,6 +6,14 @@ object knightRider {
     method peligrosidad() {
         return 10
     }
+
+    method bultos() {
+        return 1
+    }
+
+    method consecuenciaDeLaCarga() {
+        // No hace nada
+    }
 }
 
 object bumblebee {
@@ -34,6 +42,14 @@ object bumblebee {
             return 5
         }
     }
+
+    method bultos() {
+        return 2
+    }
+
+    method concecuenciaDeLaCarga() {
+        self.transformarceEnRobot()
+    }
 }
 
 object ladrillos {
@@ -50,6 +66,24 @@ object ladrillos {
     method peligrosidad() {
         return 2
     }
+
+    method bultos() {
+        if (cantidad <= 100) {
+            return 1
+        } else if (cantidad.between(101, 300)) {
+            return 2
+        } else {
+            return 3
+        }
+    }
+
+     method concecuenciaDeLaCarga() {
+        self.cantidad(12)
+    }
+
+    // method bultosSinIF() {
+    //     return (2.min(1.max(cantidad - 99))).max(3.min(cantidad - 298))
+    // }
 }
 
 object arena {
@@ -65,6 +99,14 @@ object arena {
 
     method peligrosidad() {
       return 1
+    }
+
+    method bultos() {
+        return 1
+    }
+
+     method concecuenciaDeLaCarga() {
+        peso = 0.max(peso - 10)
     }
 }
 
@@ -93,6 +135,19 @@ object bateriaAntiaerea {
         } else {
             return 0
         }
+    }
+
+    method bultos() {
+        if (estaConMisiles) {
+            return 2
+        } else {
+            return 1
+        }
+
+    }
+
+     method concecuenciaDeLaCarga() {
+        self.cargarMisiles()
     }
 }
 
@@ -125,7 +180,15 @@ object contenedorPortuario {
         } else {
             return cosas.max({cosa => cosa.peligrosidad()}).peligrosidad()
         }
-    }   
+    }
+
+    method bultos() {
+        return 1 + cosas.sum({cosa => cosa.bultos()})
+    }
+
+     method concecuenciaDeLaCarga() {
+        cosas.forEach({cosa => cosa.consecuenciaDeLaCarga()})
+    }
 }
 
 object residuosRadioactivos {
@@ -133,6 +196,14 @@ object residuosRadioactivos {
 
     method peligrosidad() {
       return 200
+    }
+
+    method bultos() {
+      return 1
+    }
+
+     method concecuenciaDeLaCarga() {
+        peso = peso + 15
     }
 }
 
@@ -145,5 +216,13 @@ object embalaje {
 
     method peligrosidad() {
         return cosaEmbuelta.peligrosidad() / 2
+    }
+
+    method bultos() {
+        return 2
+    }
+
+     method concecuenciaDeLaCarga() {
+        // No hace nada
     }
 }
