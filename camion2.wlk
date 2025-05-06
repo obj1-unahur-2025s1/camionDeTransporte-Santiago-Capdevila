@@ -58,3 +58,4 @@ object camion {
         return carga.max({cosa => cosa.peso()})
     }
 }
+
